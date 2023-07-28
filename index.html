@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Steam Key Extension is a web-based tool which can help you extract and format your Steam Keys to ASF style.">
+    <meta name="theme-color" content="#212121" />
+
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="SKE">
+    <link rel="apple-touch-icon" href="img/icons/icon-152x152.png">
+
+    <!-- Add to home screen for Windows -->
+    <meta name="msapplication-TileImage" content="img/icons/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#212121">
+
+    <title>Steam Key Extension</title>
+
+    <link rel="manifest" href="manifest.json" />
+    <!--Import Google Icon Font
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    -->
+    <!--Import Material Design Icons via self hosting-->
+    <link type="text/css" rel="stylesheet" href="css/material-icons.css" />
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <!--Costum Style-->
+    <link type="text/css" rel="stylesheet" href="css/app.css" />
+    <!--Icon-->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+</head>
+
+<body>
+    <!--Navbar-->
+    <div class="navbar-fixed">
+        <!-- Language Dropdown Structure -->
+        <ul id="ske-languages" class="dropdown-content">
+            <li>
+                <a id="ske-language-english" class="grey darken-3 white-text">English</a>
+            </li>
+            <li>
+                <a id="ske-language-schinese" class="grey darken-3 white-text">简体中文</a>
+            </li>
+            <li>
+                <a id="ske-language-tchinese" class="grey darken-3 white-text">繁體中文</a>
+            </li>
+            <li>
+                <a id="ske-language-russian" class="grey darken-3 white-text">русский</a>
+            </li>
+        </ul>
+        <nav class="grey darken-4">
+            <div class="nav-wrapper">
+                <a class="brand-logo center noselect">
+                    <img id="logo" src="img/Logo.png" alt="Steam">
+                    <i id="logo-text" class="right grey-text hide-on-med-and-down">Steam Key Extension</i>
+                </a>
+                <ul class="right">
+                    <!-- Language Dropdown Trigger -->
+                    <li>
+                        <a id="ske-language-trigger" class="dropdown-trigger grey-text" data-target="ske-languages">Languages
+                            <i class="material-icons right">arrow_drop_down</i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <main class="container">
+        <!--Bot Name-->
+        <div class="row">
+            <div class="input-field col l2 m3 s4">
+                <input id="ske-bot-name" type="text" class="blue-text text-lighten-5">
+                <label id="ske-lbl-bot-name" for="ske-bot-name">Bot Name</label>
+            </div>
+        </div>
+
+        <!--Text Input Area-->
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="ske-input" class="materialize-textarea"></textarea>
+                <label id="ske-lbl-input" for="ske-input">Input</label>
+            </div>
+        </div>
+
+        <!--Function Area-->
+        <div class="row">
+            <!--Extract-->
+            <div class="col l2 m3 s3 center offset-l2 offset-m0">
+                <a id="ske-extract" class="tooltipped waves-effect waves-light btn truncate light-blue darken-4" data-tooltip="Extract" data-position="top">
+                    <i class="material-icons left hide-on-med-and-down">colorize</i>Extract</a>
+            </div>
+            <!--Copy-->
+            <div class="col l2 m3 s3 offset-s1 center">
+                <a id="ske-copy" class="tooltipped waves-effect waves-light btn truncate light-blue darken-4" data-tooltip="Copy" data-position="top">
+                    <i class="material-icons left hide-on-med-and-down">content_copy</i>&nbsp;&nbsp;Copy&nbsp;&nbsp;&nbsp;</a>
+            </div>
+            <!--Export-->
+            <div class="col l2 m3 center hide-on-small-only">
+                <a id="ske-export" class="tooltipped waves-effect waves-light btn truncate light-blue darken-4" data-tooltip="Export" data-position="top">
+                    <i class="material-icons left hide-on-med-and-down">archive</i>Export</a>
+            </div>
+            <!--Clear-->
+            <div class="col l2 m3 s3 offset-s1 center">
+                <a id="ske-clear" class="tooltipped waves-effect waves-light btn truncate light-blue darken-4" data-tooltip="Clear" data-position="top">
+                    <i class="material-icons left hide-on-med-and-down">clear_all</i>&nbsp;&nbsp;Clear&nbsp;&nbsp;</a>
+            </div>
+        </div>
+
+        <!--Text Output Area-->
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="ske-output" class="materialize-textarea"></textarea>
+                <label id="ske-lbl-output" for="ske-output">Output</label>
+            </div>
+        </div>
+
+        <!--Site Announcement-->
+        <div class="fixed-action-btn">
+            <a id="ske-anno" class="btn btn-floating btn-large light-blue darken-4 pulse modal-trigger" href="#ske-anno-modal">
+                <i class="material-icons">announcement</i>
+            </a>
+        </div>
+
+        <div id="ske-anno-modal" class="modal">
+            <div class="modal-content">
+                <h4 class="center">Announcement</h4>
+                <p class="flow-text">This site has been moved to
+                    <a href="https://ske.xpixv.com">https://ske.xpixv.com</a>. The old domain will expire in July 9th, 2019. Please rebookmark this site.🖖</p>
+                <p class="flow-text">I'm sorry for the trouble.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close btn-flat">
+                    <b>Got it👌</b>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!--Footer Area-->
+    <footer class="page-footer grey darken-4">
+        <div class="footer-copyright">
+            <div class="container noselect">
+                <i class="grey-text text-grey lighten-1">
+                    This site is not affiliated to
+                    <a href="https://store.steampowered.com/" target="_blank" rel="noopener">Steam</a> or
+                    <a href="https://www.valvesoftware.com/" target="_blank" rel="noopener">Valve Corp</a>.
+                </i>
+                <br> MIT License © 2019 by
+                <a href="https://steamcommunity.com/profiles/76561198263380239/" target="_blank" rel="noopener">Cloud</a>
+                <span class="right">
+                    <a class="github-button right" href="https://github.com/PixvIO/SKE" data-icon="octicon-star" data-show-count="true"
+                        aria-label="Star PixvIO/SKE on GitHub">Star</a>
+                    <a class="github-button right" href="https://github.com/PixvIO/SKE/fork" data-icon="octicon-repo-forked" data-show-count="true"
+                        aria-label="Fork PixvIO/SKE on GitHub">Fork</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="js/app.js"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+body,
+html {
+    overflow-x: hidden;
+    font-size: 16px;
+}
+
+body {
+    background: url("../img/Background.jpg");
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    width: auto;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+img {
+    max-width: 100%;
+}
+
+#logo {
+    padding-top: 12px;
+}
+
+#logo-text {
+    font-size: 20px;
+}
+
+#ske-input {
+    min-height: 25vh;
+}
+
+#ske-output {
+    min-height: 10vh;
+}
+
+#ske-extract,
+#ske-copy,
+#ske-export,
+#ske-clear {
+    max-width: 120px;
+    font-size: 0.8em;
+}
+
+.btn {
+    font-size: 16px;
+}
+
+.input-field>label {
+    color: #eeeeee;
+}
+
+.input-field>input,
+.input-field>textarea {
+    color: #e0e0e0;
+}
+
+.fixed-action-btn {
+    bottom: 60px;
+}
+
+/*Can not be selected*/
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
